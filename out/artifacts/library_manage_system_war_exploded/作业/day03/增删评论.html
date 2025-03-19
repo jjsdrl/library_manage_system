@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>评论列表</h2>
+    <table width="600" border="1" align="center" cellpadding="0" cellspacing="0" id="comment">
+        <tr>
+            <td width="18%" height="27" align="center">评论人</td>
+            <td width="82%" align="center">评论内容</td>
+        </tr>
+    </table>
+ 
+    <h3>添加评论</h3>
+    <form name="form" method="post" action="">
+        评论人: <input name="person" type="text" id="person" size="40"><br>
+        评论内容: <textarea name="content" cols="60" rows="6" id="content"></textarea><br>
+        <input name="Button" type="button" value="发表" onClick="addElement()">
+        <input name="Reset" type="reset" value="重置">
+    </form>
+ 
+    <h3>管理评论</h3>
+    <input name="Button" type="button" value="删除第一条评论" onclick="deleteFirstE()">
+    <input name="Button" type="button" value="删除最后一条评论" onclick="deleteLastE()">
+
+    <script>
+        // 添加评论
+        function addElement() {
+            //获取页面输入
+            var person = document.getElementById("person").value; 
+            var content = document.getElementById("content").value;
+            //判断是否为空
+            if (person && content) { 
+                //获取表格元素
+                var tComment = document.getElementById("comment");
+                //插入表格
+                var newRow = tComment.insertRow(-1);
+                //插入数据
+                var cell1 = newRow.insertCell(0); 
+                var cell2 = newRow.insertCell(1); 
+                cell1.innerHTML = person;
+                cell2.innerHTML = content;
+                // 清空
+                document.getElementById("person").value = "";
+                document.getElementById("content").value = "";
+            } else {
+                alert("请填写完整的评论信息！");
+            }
+        }
+        
+        // 删除第一条
+        function deleteFirstE() {
+            var tComment = document.getElementById("comment");
+            if (tComment.rows.length > 1) {
+                tComment.deleteRow(1); 
+            } else {
+                alert("没有评论可以删除！");
+            }
+        }
+        
+        // 删除最后一条
+        function deleteLastE() {
+            var tComment = document.getElementById("comment");
+            if (tComment.rows.length > 1) {
+                tComment.deleteRow(tComment.rows.length - 1); 
+            } else {
+                alert("没有评论可以删除！");
+            }
+        }
+            </script>
+</body>
+</html>

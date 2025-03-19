@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required><br><br>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea><br><br>
+            <label for="hobby">Hobby:</label>
+            <input type="text" id="hobby" name="hobby" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <button type="button" onclick="register()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function register(){
+            //获取页面数据
+            var name = document.getElementById("name").value;
+            var studentId = document.getElementById("studentId").value;
+            var gender = document.getElementById("gender").value;
+            var phone = document.getElementById("phone").value;
+            var address = document.getElementById("address").value;
+            var hobby = document.getElementById("hobby").value;
+            var email = document.getElementById("email").value;
+            //判断是否为空
+            if(name == null && studentId == null && phone == null && hobby == null && email == null){
+                alert("请将数据补充完整!");
+            }else{
+                alert("注册成功!!")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            text-align: center;
+            color: red;
+            font-size: 20px;
+            border: 10px solid blue;
+        }
+    </style>
+    <script>
+        document.write("<h1>title里的javascript代码</h1>");
+        document.write("<h2>"+document.url+"</h2>")
+        document.write("<h2>"+document.URL+"</h2>")
+        document.write("<h2>"+document.characterSet+"</h2>")
+        document.write("<h2>"+document.contentType+"</h2>")
+    </script>
+</head>
+<body>
+    <h1>
+        body代码
+    </h1>
+    <input  type="text" onblur="alert(this.value)" name="userName" id = "userName" value="" >
+
+    <script>
+        document.write("<h1>结束标记前的javascript代码</h1>");
+    </script>
+</body>
+</html>
