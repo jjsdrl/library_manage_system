@@ -12,4 +12,8 @@ public interface UserMapper {
     void registerUser(@Param("userName") String userName,@Param("userPasswd")String userPasswd,@Param("userBookId") String userBookId);
     //所有用户信息
     ArrayList<User> AllUser();
+    //修改用户密码
+    void ChangeUserPasswd(@Param("userPasswd")String userPasswd,@Param("userBookId") String userBookId);
+    //根据bookid查询用户
+    User getUserInfoById(String userBookId);
 }

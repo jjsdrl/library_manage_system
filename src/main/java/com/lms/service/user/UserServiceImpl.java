@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
         UserMapper userMapper = MybatisUtils.getSqlSession().getMapper(UserMapper.class);
         //创建User
         userMapper.registerUser(userName , userPasswd , userBookId);
-        //获取root对象
+        //获取user对象
         user = userMapper.getUserInfo(userName,userPasswd);
         System.out.println(user);
         return user;
@@ -43,5 +43,18 @@ public class UserServiceImpl implements UserService{
         return users;
 
 
+    }
+
+    @Override
+    public User ChangeUserByBookId(String userPasswd, String userBookId) {
+        User user = new User();
+        //通过mybatis获取数据
+        UserMapper userMapper = MybatisUtils.getSqlSession().getMapper(UserMapper.class);
+        //创建User
+        userMapper.ChangeUserPasswd(userPasswd , userBookId);
+        //获取root对象
+        user = userMapper.getUserInfoById(userBookId);
+        System.out.println(user);
+        return user;
     }
 }

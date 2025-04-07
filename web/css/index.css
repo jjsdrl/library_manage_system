@@ -2,7 +2,7 @@ a{
   text-decoration: none;
   color: white;
 }
-.el-header, .el-footer {
+.el-header{
     background-color: #181818;
     color: #d98080;
     text-align: center;
@@ -43,4 +43,17 @@ a{
 
   .header_right{
     float: right;
+  }
+  .userTable{
+    height: 600px;
+  }
+  .el-footer{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    background-color: pink;
+    color: #f9a2a2;
+    text-align: center;
+    height: 50px;
+    width: 1300px;
   }

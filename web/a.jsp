@@ -13,14 +13,9 @@
     <title>Insert title here</title>
 </head>
 <body>
-<%
-    int count = Integer.parseInt(request.getParameter("count"));
-    int []arr = new int[20];
-    arr[0]=1;
-    arr[1]=1;
-    for (int i = 2;i<20;i++){
-        arr[i]=arr[i-1]+arr[i-2];
-    }
-%>
+<jsp:setProperty name="userName" property="">
+
+</jsp:setProperty>
+
 </body>
 </html>

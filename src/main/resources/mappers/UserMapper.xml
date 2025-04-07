@@ -35,4 +35,9 @@
         VALUES (#{userName}, #{userPasswd}, #{userBookId});
     </insert>
 
+    <update id="changeUserPasswdById">
+        UPDATE students
+        SET password = #{userPasswd}
+        WHERE student_id = #{userBookId};
+    </update>
 </mapper>
