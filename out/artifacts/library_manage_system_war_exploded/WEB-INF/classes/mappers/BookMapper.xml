@@ -11,4 +11,45 @@
             *
         from book;
     </select>
+
+
+    <!--    模糊搜索 -->
+    <select
+            id="seleteBook"
+            resultType="com.lms.pojo.Book">
+        select
+            *
+        from book
+        where book_no like concat("%",#{seletebookInfo},"%")
+           or book_name like concat("%",#{seletebookInfo},"%")
+           or book_number like concat("%",#{seletebookInfo},"%")
+           or book_author like concat("%",#{seletebookInfo},"%")
+           or press like concat("%",#{seletebookInfo},"%")
+           or press_time like concat("%",#{seletebookInfo},"%")
+           or ISBN like concat("%",#{seletebookInfo},"%")
+           or address like concat("%",#{seletebookInfo},"%");
+    </select>
+    <!--    添加图书信息-->
+    <insert
+            id="add">
+        INSERT
+        INTO book
+        VALUES (#{bookNo}, #{bookName}, #{bookNumber}, #{bookAuthor}, #{press}, #{pressTime}, #{ISBN}, #{address});
+    </insert>
+    <!-- 查询图书   -->
+    <select
+            id="findBook"
+            resultType="com.lms.pojo.Book">
+        select
+            *
+        from book
+        where book_no = #{bookNo}
+           and book_name = #{bookName}
+           and book_number = #{bookNumber}
+           and book_author = #{bookAuthor}
+           and press = #{press}
+           and press_time = #{pressTime}
+           and ISBN = #{ISBN}
+           and address = #{address};
+    </select>
 </mapper>

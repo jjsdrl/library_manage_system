@@ -36,14 +36,14 @@ public class AddBookServlet extends HttpServlet {
     //登录
     private void add(HttpServletRequest req, HttpServletResponse resp, BookService bookService) throws IOException, ServletException {
         //获取页面输入
-        String bookNo = req.getParameter("bookNo");
-        String bookName = req.getParameter("bookName");
-        int bookNumber = Integer.parseInt(req.getParameter("bookNumber"));
-        String bookAuthor = req.getParameter("bookAuthor");
-        String press = req.getParameter("press");
-        String pressTime = req.getParameter("pressTime");
-        String ISBN = req.getParameter("ISBN");
-        String address = req.getParameter("address");
+        String bookNo = req.getParameter("addBookNo");
+        String bookName = req.getParameter("addBookName");
+        int bookNumber = Integer.parseInt(req.getParameter("addBookNumber"));
+        String bookAuthor = req.getParameter("addBookAuthor");
+        String press = req.getParameter("addBookPress");
+        String pressTime = req.getParameter("addBookPressTime");
+        String ISBN = req.getParameter("addBookISBN");
+        String address = req.getParameter("addBookAddress");
         //添加
         Book book = bookService.add(bookNo , bookName,bookNumber,bookAuthor,press,pressTime,ISBN,address);
         System.out.println(book);
@@ -54,13 +54,13 @@ public class AddBookServlet extends HttpServlet {
             //将数据存入session
             session.setAttribute("addBook",book );
             //重定向至主页
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect(req.getContextPath() + "/RootHome.jsp");
         }else{
 //            req.setAttribute("msg","用户名或密码错误");
 //            req.getRequestDispatcher("login.jsp").forward(req,resp);
             String tips = URLEncoder.encode("添加失败请重新输入", "utf-8");
             //向页面输出错误原因
-            resp.sendRedirect(req.getContextPath() + "/userLogin.jsp?tips=" + tips);
+            resp.sendRedirect(req.getContextPath() + "/RootHome.jsp?tips=" + tips);
         }
     }
 }

@@ -11,7 +11,7 @@ public class BorrowBook {
     //借书者id
     private String userBookId;
     //状态
-    private int state;
+    private String state;
     //借书时间
     private Date borrowTime;
     //还书时间

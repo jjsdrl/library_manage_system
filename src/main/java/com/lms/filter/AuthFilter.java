@@ -25,7 +25,12 @@ public class AuthFilter implements Filter {
         //子父接口的关系 把servletRequest强制转换为HttpServletRequest
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-
+        // 设置请求编码
+        request.setCharacterEncoding("UTF-8");
+        // 设置响应编码
+        response.setCharacterEncoding("UTF-8");
+        // 设置响应内容类型（可选，通常与编码一起设置）
+        response.setContentType("text/html; charset=UTF-8");
         //获取到用户请求的路径
         String requestURI = request.getRequestURI();
         System.out.println(requestURI);//输出到控制台,判断是否正确获取
@@ -57,6 +62,7 @@ public class AuthFilter implements Filter {
 //            }
             if (user != null || root != null) {
                 // 登录了放行
+
                 filterChain.doFilter(request, response);
             } else {
                 // 未登录

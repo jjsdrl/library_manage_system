@@ -10,6 +10,4 @@ public class Library {
     private int roomSize;
     //现有人数
     private int remainingPeople;
-    //房间状态
-    private int roomState;
 }

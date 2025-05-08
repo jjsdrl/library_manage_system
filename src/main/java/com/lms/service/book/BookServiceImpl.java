@@ -22,8 +22,19 @@ public class BookServiceImpl implements BookService {
         //通过mybatis获取数据
         BookMapper bookMapper = MybatisUtils.getSqlSession().getMapper(BookMapper.class);
         //创建User
-        Book book = bookMapper.add(bookNo , bookName,bookNumber,bookAuthor,press,pressTime,ISBN,address);
+        bookMapper.add(bookNo , bookName,bookNumber,bookAuthor,press,pressTime,ISBN,address);
+        Book book = bookMapper.findBook(bookNo , bookName,bookNumber,bookAuthor,press,pressTime,ISBN,address);
         System.out.println(book);
         return book;
+    }
+
+    @Override
+    public ArrayList<Book> seleteBook(String seletebookInfo) {
+        //通过mybatis获取数据
+        BookMapper bookMapper = MybatisUtils.getSqlSession().getMapper(BookMapper.class);
+        //获取信息
+        ArrayList<Book> books = new ArrayList<>(bookMapper.seleteBook(seletebookInfo));
+        System.out.println(books);
+        return books;
     }
 }

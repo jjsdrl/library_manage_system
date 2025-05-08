@@ -15,7 +15,17 @@
         from user
         where user_name = #{userName} and user_passwd = #{userPasswd};
     </select>
-
+<!--    根据id查找-->
+    <select
+            id="getUserInfoById"
+            resultType="com.lms.pojo.User">
+        select
+            user_name,
+            user_passwd,
+            user_bookid
+        from user
+        where  user_bookid = #{userBookId};
+    </select>
     <!--    获取所有user信息 -->
     <select
             id="AllUser"
@@ -34,10 +44,61 @@
         INTO user
         VALUES (#{userName}, #{userPasswd}, #{userBookId});
     </insert>
-
+<!--    根据bookid修改密码-->
     <update id="changeUserPasswdById">
-        UPDATE students
-        SET password = #{userPasswd}
-        WHERE student_id = #{userBookId};
+        UPDATE user
+        SET user_passwd = #{userPasswd}
+        WHERE user_bookid = #{userBookId};
+    </update>
+<!--    查看借书情况-->
+    <select
+            id="BorrowInfoByid"
+            resultType="com.lms.pojo.BorrowBook">
+        select
+            book_no,
+            user_bookid,
+            state,
+            borrow_time,
+            return_time,
+            text
+        from borrowbook
+        where  user_bookid = #{userBookId};
+    </select>
+    <!--    查看所有借书情况-->
+    <select
+            id="BorrowInfo"
+            resultType="com.lms.pojo.BorrowBook">
+        select
+            book_no,
+            user_bookid,
+            state,
+            borrow_time,
+            return_time,
+            text
+        from borrowbook;
+    </select>
+    <!--  添加借阅信息   -->
+    <insert
+            id="addBorrowInfo">
+        INSERT
+        INTO borrowBook(book_no,user_bookid,borrow_time)
+        VALUES (#{borrowBookNo}, #{userBookId}, #{borrowTime});
+    </insert>
+<!--    借完书数量减一 bookJJ-->
+    <update id="bookJJ">
+        UPDATE book
+        SET book_number = (book_number -1)
+        WHERE book_no = #{borrowBookNo};
+    </update>
+    <!--    根据bookid修改用户名-->
+    <update id="ChangeUserNameByBookId">
+        UPDATE user
+        SET user_name = #{newName}
+        WHERE user_bookid = #{userBookId};
+    </update>
+    <update id="libneed">
+        UPDATE library
+        SET remaining_people = (remaining_people + 1)
+        WHERE room_id = #{changeLibRoomName};
     </update>
 </mapper>

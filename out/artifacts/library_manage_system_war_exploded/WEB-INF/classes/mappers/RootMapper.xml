@@ -14,4 +14,127 @@
         from root
         where root_name = #{rootName} and root_passwd = #{rootPasswd};
     </select>
+<!--    根据id删除用户-->
+    <delete id="deleteUserById">
+        delete
+        from user
+        where user_bookid = #{userBookId}
+    </delete>
+    <!--    根据图书ISBN删除书本-->
+    <delete id="deleteBookByIsbn">
+        delete
+        from book
+        where ISBN = #{ISBN}
+    </delete>
+<!--    修改图书信息-->
+    <update id="ChangeBook">
+        UPDATE book
+        SET book_name = #{changeBookName},
+            book_number = #{changeBookNumber},
+            book_author=#{changeBookAuthor},
+            press=#{changeBookPress},
+            press_time=#{changeBookPressTime},
+            ISBN=#{changeBookISBN},
+            address=#{changeBookAddress}
+        WHERE book_no = #{changeBookNo};
+    </update>
+    <!--    删除借书记录-->
+    <delete id="deleteBorrow">
+        delete
+        from borrowbook
+        where book_no = #{deleteBorrUserBookNo} and user_bookid = #{deleteBorrUserBookId} ;
+    </delete>
+<!--还书-->
+    <update id="returnBook">
+        UPDATE borrowbook
+        SET
+            state=#{state},
+            return_time=#{returnTime},
+            text=#{changeBorrText}
+        WHERE book_no = #{changeBorrUserBookNo} and user_bookid = #{changeBorrUserBookId} ;
+    </update>
+    <!--    还书书数量加一 bookJiaJ-->
+    <update id="bookJiaJ">
+        UPDATE book
+        SET book_number = (book_number + 1)
+        WHERE book_no = #{changeBorrUserBookNo};
+    </update>
+    <!--    模糊搜索用户 -->
+    <select
+            id="seleteUser"
+            resultType="com.lms.pojo.User">
+        select
+            *
+        from user
+        where user_name like concat("%",#{seleteuserInfo},"%")
+           or user_bookid like concat("%",#{seleteuserInfo},"%");
+    </select>
+<!--    模糊搜索借阅情况-->
+    <select
+            id="seleteBorr"
+            resultType="com.lms.pojo.BorrowBook">
+        select
+            *
+        from borrowbook
+        where book_no like concat("%",#{seleteborrInfo},"%")
+           or user_bookid like concat("%",#{seleteborrInfo},"%")
+           or state like concat("%",#{seleteborrInfo},"%")
+           or borrow_time like concat("%",#{seleteborrInfo},"%")
+           or return_time like concat("%",#{seleteborrInfo},"%")
+           or text like concat("%",#{seleteborrInfo},"%");
+    </select>
+<!--    新增用户-->
+    <insert
+            id="addUser">
+        INSERT
+        INTO user
+        VALUES (#{addUserBookId}, #{userPasswd}, #{addUserBookId});
+    </insert>
+    <!--    获取所有借阅室信息 -->
+    <select
+            id="allLib"
+            resultType="com.lms.pojo.Library">
+        select
+            room_id,
+            room_size,
+            remaining_people
+        from library;
+    </select>
+    <!--   修改借阅室 -->
+    <update id="libChange">
+        UPDATE library
+        SET room_size = #{changeLibRoomSize}
+        WHERE room_id = #{changeLibRoomName};
+    </update>
+    <!--    删除借阅室-->
+    <delete id="deleteLib">
+        delete
+        from library
+        where room_id = #{deleteLibName};
+    </delete>
+    <!--    新增借阅室-->
+    <insert
+            id="addLib">
+        INSERT
+        INTO library(room_id,room_size)
+        VALUES (#{addLibRoomName}, #{addLibRoomSize});
+    </insert>
+    <!--    根据roomid获取借阅室信息 -->
+    <select
+            id="getLibInfo"
+            resultType="com.lms.pojo.Library">
+        select
+            *
+        from library
+        where room_id = #{addLibRoomName} ;
+    </select>
+    <!--    模糊查询获取借阅室信息 -->
+    <select
+            id="seleteLib"
+            resultType="com.lms.pojo.Library">
+        select
+            *
+        from library
+        where room_id like concat("%",#{seleteLibInfo},"%") ;
+    </select>
 </mapper>

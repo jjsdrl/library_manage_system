@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: #0ef;
+}
+
+.el-header,
+.el-footer {
+    background-color: #000;
+    font-family: "STXingkai", Times, serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.el-aside {
+    background-color: #000;
+    font-family: "STXingkai", Times, serif;
+
+    text-align: center;
+    line-height: 200px;
+    height: 650px;
+}
+
+.el-main {
+    background-color: #000;
+    text-align: center;
+    line-height: 160px;
+    padding: 0;
+}
+
+.el-menu {
+    background-color: #000;
+    color: #0ef;
+}
+
+body>.el-container {
+    margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+.header_right {
+    float: right;
+}
+
+.header_left {
+    float: left;
+}
+.header_center{
+    float: left;
+    width: 300px;
+    margin-left: 580px;
+}
+.el-dropdown-link {
+    cursor: pointer;
+    color: #409EFF;
+}
+
+.el-icon-arrow-down {
+    font-size: 20px;
+}
+
+.el-main {
+    height: 650px;
+    overflow: auto;
+}
+
+.flicker {
+    color: #0ef;
+    /*设置文字颜色*/
+    font-size: 36px;
+    /*设置字体大小*/
+    font-weight: bolder;
+    /*设置字体粗细*/
+    -webkit-animation: flicker 2s infinite;
+    /*设置动画*/
+}
+
+@-webkit-keyframes flicker {
+
+    /*创建动画*/
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.el-table td,
+th{
+    background-color: #000;
+    color: #0ef;
+}
+/* 白色边框 */
+#BorrowManagement,#BookInformation{
+    border: #fff 1px solid;
+}
+#BookInformation .el-table,
+#BookInformation .el-table__row,
+#BookInformation .el-table__cell,
+#BookInformation .el-table__header-wrapper,
+#BookInformation .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#BookInformation .el-table th,
+#BookInformation .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#BookInformation  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+#BookInformation .el-table .el-icon-thumb {
+    color: #0ef;
+    transition: color 0.3s ease;
+}
+
+#BookInformation .el-table--enable-row-hover .el-table__body tr:hover .el-icon-thumb {
+    color: pink; 
+}
+#BookInformation .el-table .el-icon-thumb {
+    color: #0ef;
+}
+
+.el-menu-item-group__title {
+    color: #0ef;
+}
+
+.el-submenu__title,
+.el-menu-item,
+.el-icon-menu {
+    color: #0ef;
+}
+
+.el-table td.el-table__cell {
+    border-bottom: none;
+}
+
+#BorrowManagement .el-table,
+#BorrowManagement .el-table__row,
+#BorrowManagement .el-table__cell,
+#BorrowManagement .el-table__header-wrapper,
+#BorrowManagement .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#BorrowManagement .el-table th,
+#BorrowManagement .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#BorrowManagement  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+
+
+#selectBookInformation .el-table,
+#selectBookInformation .el-table__row,
+#selectBookInformation .el-table__cell,
+#selectBookInformation .el-table__header-wrapper,
+#selectBookInformation .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#selectBookInformation .el-table th,
+#selectBookInformation .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#selectBookInformation  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+.search{
+  width: 250px;
+  border-color: gray;
+  color: #0ef;
+}
+.searchI{
+  color: #0ef;
+  font-size: 25px;
+}
+#selectBookInformation .el-table .el-icon-thumb {
+    color: #0ef;
+    transition: color 0.3s ease;
+}
+
+#selectBookInformation .el-table--enable-row-hover .el-table__body tr:hover .el-icon-thumb {
+    color: pink; 
+}
+#selectBookInformation .el-table .el-icon-thumb {
+    color: #0ef;
+}
+#selectBorrowManagement .el-table,
+#selectBorrowManagement .el-table__row,
+#selectBorrowManagement .el-table__cell,
+#selectBorrowManagement .el-table__header-wrapper,
+#selectBorrowManagement .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#selectBorrowManagement .el-table th,
+#selectBorrowManagement .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#selectBorrowManagement  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+
+#LibInfo .el-table,
+#LibInfo .el-table__row,
+#LibInfo .el-table__cell,
+#LibInfo .el-table__header-wrapper,
+#LibInfo .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#LibInfo .el-table th,
+#LibInfo .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#LibInfo  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+#LibInfo .el-table .el-icon-check {
+    color: #0ef;
+    transition: color 0.3s ease;
+}
+
+#LibInfo .el-table--enable-row-hover .el-table__body tr:hover .el-icon-check {
+    color: pink; 
+}
+#selectLibInfo .el-table,
+#selectLibInfo .el-table__row,
+#selectLibInfo .el-table__cell,
+#selectLibInfo .el-table__header-wrapper,
+#selectLibInfo .el-table__body-wrapper {
+    background-color: #000;
+    color: #0ef;
+}
+
+#selectLibInfo .el-table th,
+#selectLibInfo .el-table td {
+    background-color: #000;
+    color: #0ef;
+    text-align: center;
+}
+#selectLibInfo  .el-table--enable-row-hover .el-table__body tr:hover td{
+    background-color: #222; 
+    color: pink;
+}
+#selectLibInfo .el-table .el-icon-check {
+    color: #0ef;
+    transition: color 0.3s ease;
+}
+
+#selectLibInfo .el-table--enable-row-hover .el-table__body tr:hover .el-icon-check {
+    color: pink; 
+}
+/* #app:hover {
+    animation: animate 1s linear infinite;
+  }
+  
+  @keyframes animate {
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  } */
+
+.maskBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 模糊效果 */
+    backdrop-filter: blur(8px);
+    z-index: 998;
+}
+.maskboxInput{
+    color: #0ef;
+}
+.text-xl {
+    margin-top: 5px ;
+    color: #0ef;
+    text-align: center;
+}
+
+.text-white {
+    width: 200px;
+    height: 60px;
+    display: block;
+    background-color: #0A1A2A;
+    box-shadow: 0 0 1px 1px #0ef;
+    margin: auto;
+    border-radius: 5px;
+}
+.text-white:hover{
+    background-color: #0ef;
+    color: #FAFAFA;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.text-white:active {
+    color: #fff;
+}
+
+.bg-white {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    background: linear-gradient(to bottom right, #1A1A1A, #0A1A2A);
+}
+
+#password-form {
+    height: 250px;
+}
+/* 修改密码框label */
+#password-form label{
+    margin-left: 75px;
+}
+/* 修改密码框input */
+#password-form input{
+    width: 250px;
+    margin-left: 75px;
+    border-color: gray;
+}
+.mb-4 {
+    padding-bottom: 10px;
+}
+
+#btn {
+    color: #0ef;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    font-size: 30px;
+    right: 520px;
+    top: 175px;
+    z-index: 999;
+}
+.borrBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 模糊效果 */
+    backdrop-filter: blur(8px);
+    z-index: 998;
+}
+.borrBoxInput{
+    color: #0ef;
+}
+.text-xl {
+    margin-top: 5px ;
+    color: #0ef;
+    text-align: center;
+}
+
+.text-white {
+    width: 200px;
+    height: 60px;
+    display: block;
+    background-color: #0A1A2A;
+    box-shadow: 0 0 1px 1px #0ef;
+    margin: auto;
+    border-radius: 5px;
+}
+.text-white:hover{
+    background-color: #0ef;
+    color: #FAFAFA;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.text-white:active {
+    color: #fff;
+}
+
+.bg-white {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+    background: linear-gradient(to bottom right, #1A1A1A, #0A1A2A);
+}
+
+#borrow-form {
+    height: 250px;
+}
+#borrow-form label{
+    margin-left: 75px;
+}
+#borrow-form input{
+    width: 250px;
+    margin-left: 75px;
+    border-color: gray;
+}
+
+#borrbtn {
+    color: #0ef;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    font-size: 30px;
+    right: 520px;
+    top: 175px;
+    z-index: 999;
+}
+
+.changeusernameBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 模糊效果 */
+    backdrop-filter: blur(8px);
+    z-index: 998;
+  }
+  #name-form {
+    height: 250px;
+  }
+  /* 修改密码框label */
+  #name-form label{
+    margin-left: 75px;
+  }
+  /* 修改密码框input */
+  #name-form input{
+    width: 250px;
+    margin-left: 75px;
+    border-color: gray;
+  }
+  #changeusernamebtn {
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    font-size: 30px;
+    right: 510px;
+    top: 160px;
+    z-index: 999;
+  }
+  .changeLibBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 模糊效果 */
+    backdrop-filter: blur(8px);
+    z-index: 998;
+  }
+  #changeLib-form {
+    height: 250px;
+  }
+  /* 修改密码框label */
+  #changeLib-form label{
+    margin-left: 75px;
+  }
+  /* 修改密码框input */
+  #changeLib-form input{
+    width: 250px;
+    margin-left: 75px;
+    border-color: gray;
+  }
+  #changeLibbtn {
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    font-size: 30px;
+    right: 510px;
+    top: 160px;
+    z-index: 999;
+  }
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #0ef;
+}

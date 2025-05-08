@@ -9,4 +9,6 @@ public interface BookService {
     ArrayList<Book> allBook();
     //添加
     Book add(String bookNo, String bookName, int bookNumber, String bookAuthor, String press, String pressTime, String isbn, String address);
+    //搜索书
+    ArrayList<Book> seleteBook(String seletebookInfo);
 }

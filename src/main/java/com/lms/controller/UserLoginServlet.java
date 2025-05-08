@@ -48,7 +48,7 @@ public class UserLoginServlet extends HttpServlet {
             //将数据存入session
             session.setAttribute("loginUser",user );
             //重定向至主页
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("UserHome.jsp");
         }else{
 //            req.setAttribute("msg","用户名或密码错误");
 //            req.getRequestDispatcher("login.jsp").forward(req,resp);
